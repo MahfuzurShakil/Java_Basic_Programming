@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class DataTypes {
     public static void main(String[] args) {
@@ -51,18 +52,72 @@ public class DataTypes {
         System.out.println(name);
         System.out.println(file);
 
+        //Constant Variable, write "final" keyword before declare a variable
+        final float PI = 3.14F;
 
-        //Arrays
+        //Post fix and pre fix concept
+        int x1 = 1;
+        int y1 = x1++;//If post fix, first x will copy to y then it will increase
+        System.out.println("x= "+x1+" y= "+y1);
 
-        int[] numbers = new int[5];
-        numbers[0]=1;
-        numbers[4]=2;
+        int x2 = 1;
+        int y2 = ++x2;//Opposite for pre fix
+        System.out.println("x= "+x2+" y= "+y2);
 
-        System.out.println(Arrays.toString(numbers));
+        //Two ways to increase by two
+        int z=1;
+        //x = x+2;
+        z +=2;//It's called augmented/Compound sign operator
+        System.out.println(z);
 
-        int[] nums = {2,1,4,3};
-        Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
+        //Implicit casting(Automatic conversion)
+        //byte>short>int<long>float>double
+        //It happens when there is no chance of data lose
+        short x3 = 4;
+        int y3 = x3+5;
+        System.out.println(y3);
+
+        //Explicit casting
+        //We can't cast string to number
+        double d = 2.3;
+        int d1 = (int)d + 3;
+        System.out.println(d1);
+
+        //
+
+        String s = "22";
+        int ss = Integer.parseInt(s) +2;
+        System.out.println(ss);
+
+        //Math function
+        int result = (int) Math.ceil(2.8F);
+        System.out.println(result);
+
+        int result1 = (int) Math.floor(6.7);
+        System.out.println(result1);
+
+        int max = Math.max(result,result1);
+        System.out.println(max);
+
+        double random = Math.random();
+        System.out.println("A random number between 0 and 1: "+random);
+
+        //How generate random number 0 to 100
+        int random1 =(int) Math.round(Math.random()*100);
+        System.out.println(random1);
+
+        //Scan Input
+        Scanner scanner = new Scanner(System.in);
+//        int abc = scanner.nextInt();
+//        System.out.println(abc);
+
+        System.out.print("Enter your name");
+        String name1 = scanner.nextLine().trim();
+        System.out.println(name1);
+
+
+
+
 
 
     }
