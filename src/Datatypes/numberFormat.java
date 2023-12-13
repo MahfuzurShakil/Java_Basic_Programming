@@ -1,3 +1,5 @@
+package Datatypes;
+
 import java.text.NumberFormat;
 
 public class numberFormat {

@@ -1,3 +1,5 @@
+package Datatypes;
+
 import java.util.Arrays;
 public class ArrayInJava {
     public static void main(String[] args) {

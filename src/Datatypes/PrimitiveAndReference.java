@@ -1,9 +1,10 @@
+package Datatypes;
+
 import java.awt.*;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
-public class DataTypes {
+public class PrimitiveAndReference {
     public static void main(String[] args) {
         //Two data types Primitive and Reference type
         //Primitive data types are byte,int,Float, Double
