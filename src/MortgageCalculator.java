@@ -3,21 +3,28 @@ import java.util.Scanner;
 
 public class MortgageCalculator {
     public static void main(String[] args) {
+
+        final byte MONTHS_IN_YEAR = 12;
+        final byte PERCENTAGE = 100;
+
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Principle: ");
-        double principle = scanner.nextDouble();
+        int principle = scanner.nextInt();
+
         System.out.print("Annual interest rate: ");
-        double interestRate = scanner.nextDouble();
+        float annualInterest = scanner.nextFloat();
+        double monthlyInterest = annualInterest/PERCENTAGE/MONTHS_IN_YEAR;
+
         System.out.print("Period(Years): ");
-        int years = scanner.nextInt();
+        byte years = scanner.nextByte();
 
-        int nmonth = 12*years;
-        double r = (interestRate/100)/12;
-        double  eq1 = Math.pow(1+r,nmonth);
-        double M = (principle*r*eq1)/(eq1-1);
+        int numberOfPayments = years*MONTHS_IN_YEAR;
 
-        String result = NumberFormat.getCurrencyInstance().format(M);
+        double mortgage = principle*(monthlyInterest*Math.pow(1+monthlyInterest,numberOfPayments))/
+                (Math.pow(1+monthlyInterest,numberOfPayments)-1);
 
+        String result = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: "+result);
 
 
