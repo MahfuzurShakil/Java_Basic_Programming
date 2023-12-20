@@ -26,5 +26,10 @@ public class ForWhileDoWhileLoop {
         do{
             System.out.println("GG");
         }while (!input.equals("quit"));
+
+        //For Each Loop
+        String[] fruits = {"Apple", "Mango","Banana"};
+        for(String fruit:fruits)
+            System.out.println(fruit);
     }
 }

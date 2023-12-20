@@ -10,16 +10,38 @@ public class MortgageCalculator {
         final byte PERCENTAGE = 100;
 
         Scanner scanner = new Scanner(System.in);
+        int principle=0;
+        float annualInterest;
+        byte years;
 
-        System.out.print("Principle: ");
-        int principle = scanner.nextInt();
+        while (true) {
+            System.out.print("Principle: ");
+            principle = scanner.nextInt();
+            if (principle < 1000 || principle > 1000000) {
+                System.out.println("Enter a number between 1,000 and 1,000,000");
+                continue;
+            }
+            else
+                break;
+        }
 
-        System.out.print("Annual interest rate: ");
-        float annualInterest = scanner.nextFloat();
+        while (true){
+            System.out.print("Annual interest rate: ");
+            annualInterest = scanner.nextFloat();
+            if (annualInterest>=1 && annualInterest <=30)
+                break;
+            System.out.println("Enter valid number greater than 0 and less than 30");
+        }
+
         double monthlyInterest = annualInterest/PERCENTAGE/MONTHS_IN_YEAR;
 
-        System.out.print("Period(Years): ");
-        byte years = scanner.nextByte();
+        while (true){
+            System.out.print("Period(Years): ");
+            years = scanner.nextByte();
+            if (years>=1 && years <=30)
+                break;
+            System.out.println("Enter valid number between 1 and 30");
+        }
 
         int numberOfPayments = years*MONTHS_IN_YEAR;
 
